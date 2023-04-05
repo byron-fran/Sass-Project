@@ -1,0 +1,39 @@
+@use '../base/mixins' as m;
+@use '../base/variables' as v;
+.fondo{
+    margin-top: 5rem;
+    background-image: linear-gradient(to bottom, transparent 0%, transparent 50%, v.$celeste 50%, v.$celeste 100%), url('..img/imagen-mujer.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: right center;
+    @include m.tableta {
+        background-image: linear-gradient(to left, transparent 0%, transparent 50%, v.$celeste 50%, v.$celeste 100%), url('../img/imagen-mujer.jpg');
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: 0rem 0rem;
+        padding: 10rem 0rem;
+        
+    }
+
+}
+.fondo__grid{
+    display: grid;
+    grid-template-rows: repeat(2, 1fr);
+    @include m.tableta {
+        grid-template-rows: unset;
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 5REM;
+    }
+    
+    .fondo__texto{
+        width: 78%;
+        margin: 0 auto;
+        color: white;
+        
+        grid-row:2/3;
+        @include m.tableta {
+            width:100%;
+            grid-column: 1/2;
+        }
+    }
+}

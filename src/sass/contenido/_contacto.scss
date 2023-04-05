@@ -1,0 +1,49 @@
+@use '../base/mixins' as m;
+@use '../base/variables' as v;
+
+.contacto__grid{
+    display: grid;
+    grid-template-rows: repeat(2, 1fr);
+    @include m.tableta {
+        grid-template-rows: unset;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+.formulario{
+    background: white;
+    padding: 5rem;
+    grid-row:2/3;
+    @include m.tableta {
+        grid-column:2/3;
+    }
+}
+.formulario__correo{
+    padding: 1rem;
+
+}
+.formulario__submit{
+    display: block;
+    background: v.$celeste;
+    padding: 1rem;
+    font-size: 2rem;
+    font-weight: 900;
+    color: white;
+    border:none;
+    margin-bottom:4rem;
+    cursor: pointer;
+}
+.campo{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+.bg-contacto{
+    background-image: url('../img/newsletter.jpg');
+    background-position: top center;
+    background-repeat: no-repeat;
+    @include m.tableta {
+        background-position: top left;
+    }
+    
+}

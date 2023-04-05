@@ -1,0 +1,80 @@
+@use '../base/mixins' as m;
+@use '../base/variables' as v;
+.header{
+    background: black;
+    padding-bottom: 10rem;
+  
+}
+.header__grid{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    @include m.tableta {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+}
+.header__logo{
+ 
+    margin: 0 auto;
+    width: 100%;
+    img{
+        width:100%;
+    }
+    @include m.tableta {
+     
+        margin: 0;
+    }
+  
+}
+.header__info{
+    color: white;
+    text-align: center;
+    margin:0 auto;
+    
+    @include m.tableta {
+        padding-top: 10rem;
+        text-align:left;
+        margin:0 auto;
+        .header__h3{
+            margin:0;
+            line-height: 0;
+        }
+    }
+    .header__h1{
+        color: transparent;
+        background: linear-gradient(to right, v.$azul 0% , v.$verde 100%);
+        background-clip: text;
+        -webkit-background-clip: text;
+        font-weight: 900;
+        margin:1rem;
+       
+        @include m.tableta {
+            background: linear-gradient(to right, v.$azul 0% , v.$azul 20%, v.$verde 40%, v.$verde 100%);
+            background-clip: text;
+            -webkit-background-clip: text;
+             font-weight: 900;
+             font-size: 10rem;
+        }
+
+    }
+    .header__precio{
+        font-size: 1.4rem;
+        font-weight: 400;
+        margin:0;
+        span{
+            font-size: 6rem;
+            font-weight: 900;
+        }
+    }
+    .header-p{
+        width:100%;
+        margin:0;
+        @include m.tableta {
+            width:50%;
+           
+            
+        }
+    }
+}
